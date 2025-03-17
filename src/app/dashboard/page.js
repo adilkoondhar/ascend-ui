@@ -1,5 +1,5 @@
 'use client';
-
+// app/dashboard/page.js or pages/dashboard.js
 import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import DashboardHeader from '@/components/DashboardHeader';
@@ -11,6 +11,7 @@ import MeetingsCalendar from '@/components/MeetingsCalendar';
 import MeetingMinutesGenerator from '@/components/MeetingMinutes';
 import RoadmapGenerator from '@/components/RoadmapGenerator';
 import UserSettings from '@/components/UserSettings';
+import PersonaGenerator from '@/components/PersonaGenerator';
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -95,6 +96,10 @@ export default function Dashboard() {
 
         {activeComponent === 'userSettings' && (
           <UserSettings />
+        )}
+
+        {activeComponent === 'personaGenerator' && (
+          <PersonaGenerator />
         )}
       </div>
     </div>
